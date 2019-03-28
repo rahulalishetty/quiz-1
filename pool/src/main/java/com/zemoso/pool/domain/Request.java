@@ -1,6 +1,7 @@
 package com.zemoso.pool.domain;
 
 import javax.persistence.*;
+import java.time.Duration;
 import java.util.Date;
 
 @Entity
@@ -20,8 +21,9 @@ public class Request {
     private Date timeStampRequested;
 
     @Column(nullable = false)
+    private Duration duration;
+
+    @Column(nullable = false)
     private String statusOfBooking;
-
-
 
 }
