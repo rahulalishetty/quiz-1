@@ -14,8 +14,7 @@ import java.net.URI;
 @RestController
 public class PoolController {
 
-    @Autowired
-    private RequestRepository requestRepository;
+
 
     @RequestMapping(method= RequestMethod.POST, value = "/api/request")
     public ResponseEntity<?> createRequest(@RequestBody Request request) {
