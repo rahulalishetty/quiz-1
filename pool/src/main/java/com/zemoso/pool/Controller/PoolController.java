@@ -2,6 +2,7 @@ package com.zemoso.pool.Controller;
 
 import com.zemoso.pool.Repository.RequestRepository;
 import com.zemoso.pool.domain.Request;
+import com.zemoso.pool.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,11 +15,15 @@ import java.net.URI;
 @RestController
 public class PoolController {
 
+    @Autowired
+    private RequestService requestService;
 
+    @Autowired
+    private RequestRepository requestRepository;
 
     @RequestMapping(method= RequestMethod.POST, value = "/api/request")
     public ResponseEntity<?> createRequest(@RequestBody Request request) {
-            request = requestRepository.save(request);
+            requestService.saveRequest(request);
 
             HttpHeaders responseHeaders = new HttpHeaders();
             URI newPollUri = ServletUriComponentsBuilder
