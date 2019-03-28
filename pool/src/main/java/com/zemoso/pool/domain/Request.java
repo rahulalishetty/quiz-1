@@ -15,15 +15,54 @@ public class Request {
     @Column(nullable=false)
     private Integer groupStrength;
 
-    @Basic(optional = false)
-    @Column(name = "LastTouched", insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timeStampRequested;
+//    @Basic(optional = false)
+//    @Column(name = "LastTouched", insertable = false, updatable = false)
+//    @Temporal(TemporalType.TIMESTAMP)
+//    private Date timeStampRequested;
 
     @Column(nullable = false)
-    private Duration duration;
+    private Integer duration;
 
     @Column(nullable = false)
     private String statusOfBooking;
 
+    public Integer getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Integer groupId) {
+        this.groupId = groupId;
+    }
+
+    public Integer getGroupStrength() {
+        return groupStrength;
+    }
+
+    public void setGroupStrength(Integer groupStrength) {
+        this.groupStrength = groupStrength;
+    }
+
+//    public Date getTimeStampRequested() {
+//        return timeStampRequested;
+//    }
+//
+//    public void setTimeStampRequested(Date timeStampRequested) {
+//        this.timeStampRequested = timeStampRequested;
+//    }
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    public String getStatusOfBooking() {
+        return statusOfBooking;
+    }
+
+    public void setStatusOfBooking(String statusOfBooking) {
+        this.statusOfBooking = statusOfBooking;
+    }
 }
